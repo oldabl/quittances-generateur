@@ -1,0 +1,83 @@
+% Modèle LaTeX de quittance de location meublée
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+\begin{document}
+\thispagestyle{empty}
+
+% Titre du document
+\begin{center}
+Location vide ou meublée à titre de résidence principale\\
+\begin{LARGE}
+Quittance de loyer du mois de \nommois\space\annee
+\end{LARGE}
+\end{center}
+\bigskip
+
+% Coordonnées du propriétaire
+\begin{flushleft}
+\nomproprio\\
+\adresseproprio\\
+\villeproprio
+\end{flushleft}
+
+\medskip
+
+% Coordonnées de la locataire
+\begin{flushright}
+\nomlocataire\\
+\adresselocataire\\
+\villelocataire
+\end{flushright}
+
+\medskip
+
+% Date et lieu
+\begin{flushright}
+Fait à \lieudocument, le \today
+\end{flushright}
+
+\medskip
+
+% Adresse de la location
+\begin{flushleft}
+Adresse de la location :\\
+\adresselocation\\
+\villelocation
+\end{flushleft}
+
+\medskip
+
+% Quittance de loyer
+\begin{flushleft}
+Je, soussigné \nomproprio, propriétaire du logement désigné ci-dessus, déclare avoir reçu
+de \nomlocataire, la somme de \loyerchiffres\space euros (\loyerlettres\space euros), au titre
+du paiement du loyer et des charges pour la période de location du \debutmois\space au
+\finmois\space et lui en donne quittance, sous réserve de tous mes droits.
+\end{flushleft}
+
+\medskip
+
+% Détail du règlement
+\begin{flushleft}
+Détail du règlement :\\
+Loyer : \loyerchiffres\space euros\\
+Provision pour charges : \charges\space euros\\
+(le cas échéant, contribution aux économies d’énergies) : \economisenergies\space euros\\
+Total : \totalpaiement\space euros\\
+Date du paiement : le \datepaiement
+\end{flushleft}
+
+\medskip
+
+% Signature
+\begin{center}
+\includegraphics[width=0.3\linewidth]{Signature.PNG}
+\end{center}
+
+
+\end{document}
