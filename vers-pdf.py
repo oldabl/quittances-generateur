@@ -21,9 +21,4 @@ variables += "\\def\\debutmois{01/02/2022} "
 variables += "\\def\\finmois{28/02/2022} "
 variables += "\\def\\totalpaiement{350} "
 variables += "\\def\\datepaiement{10/02/2022} "
-os.system(" pdflatex \""+variables+" \input{modele-appt-meuble.tex}\" ")
-
-# from pdflatex import PDFLaTeX
-
-# pdfl = PDFLaTeX.from_texfile('modele-appt-meuble.tex')
-# pdf, log, completed_process = pdfl.create_pdf(keep_pdf_file=True, keep_log_file=True)
+os.system(" pdflatex \""+variables+" \input{modele-quittance-appt-meuble-vide.tex}\" ")
