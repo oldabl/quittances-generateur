@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# LaTeX artefacts
+*.aux
+*.pdf
+
+# Personal signature formats
+*.png
+*.PNG
+*.jpg
+*.JPG
