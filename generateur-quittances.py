@@ -20,8 +20,8 @@ mois_francais = { "01": "janvier",
 class GenerateurQuittances:
   def __init__(self, fichier_bdd, mois = datetime.datetime.now().strftime("%m"), annee = datetime.datetime.now().strftime("%Y")):
     self.fichier_bdd = fichier_bdd
-    self.mois = mois
-    self.annee = annee
+    self.mois = str(mois).zfill(2)
+    self.annee = str(annee)
   def creerQuittances(self):
     self.bddVersQuittances()
 
@@ -62,7 +62,7 @@ class GenerateurQuittances:
     jour_fin_mois = str(calendar.monthrange(int(self.annee), int(self.mois))[1])
     variables += " \\def\\nommois{"+str(mois_francais[date.strftime("%m")])+"} "
     variables += " \\def\\numeromois{"+str(date.strftime("%m"))+"} "
-    variables += " \\def\\annee{"+str(datetime.datetime.now().strftime("%Y"))+"} "
+    variables += " \\def\\annee{"+str(self.annee)+"} "
     variables += " \\def\\debutmois{"+str(date.strftime("%d/%m/%Y"))+"} "
     variables += " \\def\\finmois{"+str(date.strftime(jour_fin_mois+"/%m/%Y"))+"} "
     return variables
