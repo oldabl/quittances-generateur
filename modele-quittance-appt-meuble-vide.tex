@@ -1,4 +1,4 @@
-% Modèle LaTeX de quittance de location meublée
+% Modèle LaTeX de quittance de location vide ou meublée
 
 \documentclass[12pt,a4paper]{article}
 \usepackage[francais]{babel}
@@ -47,6 +47,7 @@ Fait à \lieudocument, le \today
 \begin{flushleft}
 Adresse de la location :\\
 \adresselocation\\
+\lotlocation\\
 \villelocation
 \end{flushleft}
 
@@ -55,7 +56,7 @@ Adresse de la location :\\
 % Quittance de loyer
 \begin{flushleft}
 Je, soussigné \nomproprio, propriétaire du logement désigné ci-dessus, déclare avoir reçu
-de \nomlocataire, la somme de \loyerchiffres\space euros (\loyerlettres\space euros), au titre
+de \nomlocataire, la somme de \totalpaiementchiffres\space euros (\totalpaiementlettres\space euros), au titre
 du paiement du loyer et des charges pour la période de location du \debutmois\space au
 \finmois\space et lui en donne quittance, sous réserve de tous mes droits.
 \end{flushleft}
@@ -68,7 +69,7 @@ Détail du règlement :\\
 Loyer : \loyerchiffres\space euros\\
 Provision pour charges : \charges\space euros\\
 (le cas échéant, contribution aux économies d’énergies) : \economisenergies\space euros\\
-Total : \totalpaiement\space euros\\
+Total : \totalpaiementchiffres\space euros\\
 Date du paiement : le \datepaiement
 \end{flushleft}
 
