@@ -20,3 +20,8 @@ gen = GenerateurQuittances("bdd.yml", 01, 2021)
 ```
 Le fichier *bdd.yml* doit contenir toutes les informations de la situation : propriétaires, adresses, locataires, etc..
 Un exemple à suivre se trouve dans le fichier *bdd.yml*.
+
+PS : le fichier *nettoyer.sh* peut être utilisé de la façon suivante pour supprimer tous les fichiers temporaires créés pendant l'exécution du programme :
+```shell
+./nettoyer.sh
+```
