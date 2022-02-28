@@ -1,5 +1,6 @@
 import yaml, os, datetime, calendar
 
+# Tableau qui fait la correspondance entre les numéro de mois et leur nom en français
 mois_francais = { "01": "janvier",
                   "02": "février",
                   "03": "mars",
@@ -13,6 +14,9 @@ mois_francais = { "01": "janvier",
                   "11": "novembre",
                   "12": "décembre"}
 
+#
+# Classe qui permet de générer des quittances en PDF à partir d'un fichier YAML
+#
 class GenerateurQuittances:
   def __init__(self, fichier_bdd, mois = datetime.datetime.now().strftime("%m"), annee = datetime.datetime.now().strftime("%Y")):
     self.fichier_bdd = fichier_bdd
@@ -20,6 +24,8 @@ class GenerateurQuittances:
     self.annee = annee
   def creerQuittances(self):
     self.bddVersQuittances()
+
+  # Crée une chaine de variables avec les informations du propriétaire
   def rapporterVariablesProprioPourLatex(self, bdd):
     variables = ""
     variables += " \\def\\nomproprio{"+str(bdd['proprietaire']['nom'])+"} "
@@ -27,6 +33,8 @@ class GenerateurQuittances:
     variables += " \\def\\villeproprio{"+str(bdd['proprietaire']['code_postal']) +" "+ str(bdd['proprietaire']['ville'])+"} "
     variables += " \\def\\lieudocument{"+str(bdd['proprietaire']['ville'])+"} "
     return variables
+
+  # Crée une chaine de variables avec les informations du locataire du lot
   def rapporterVariablesInfoLocatairePourLatex(self, lot):
     variables = ""
     variables += " \\def\\loyerchiffres{"+str(lot['montant_loyer'])+"} "
@@ -39,11 +47,15 @@ class GenerateurQuittances:
     variables += " \\def\\totalpaiementlettres{"+str(lot['montant_total_lettres'])+"} "
     variables += " \\def\\datepaiement{"+str(lot['jour_paiement_mois']).zfill(2)+"/"+self.mois+"/"+self.annee+"} "
     return variables
+
+  # Crée une chaine de variables avec les informations de l'adresse de la location
   def rapporterVariablesAdresseLocationPourLatex(self, adresse):
     variables = ""
     variables += " \\def\\adresselocation{"+str(adresse.split(',')[0])+"} "
     variables += " \\def\\villelocation{"+str(adresse.split(',')[1])+"} "
     return variables
+
+  # Crée une chaine de variables avec les informations sur les différentes dates nécessaires
   def creerVariablesDatePourLatex(self):
     variables = ""
     date = datetime.datetime.strptime(self.annee+"-"+self.mois+"-01", "%Y-%m-%d")
@@ -54,8 +66,12 @@ class GenerateurQuittances:
     variables += " \\def\\debutmois{"+str(date.strftime("%d/%m/%Y"))+"} "
     variables += " \\def\\finmois{"+str(date.strftime(jour_fin_mois+"/%m/%Y"))+"} "
     return variables
+
+  # Retourne le nom de famille du locataire (dernier mot du nom complet)
   def rapporterNomLocataire(self, lot):
     return lot['nom_locataire'].split(" ")[-1]
+
+  # Génère les quittances en PDF depuis la base de donnée YAML
   def bddVersQuittances(self):
     with open(self.fichier_bdd) as f:
       bdd = yaml.load(f, Loader=yaml.FullLoader)
@@ -72,5 +88,6 @@ class GenerateurQuittances:
           os.system(" pdflatex -jobname '"+nom_fichier+"' -output-format pdf \""+toutes_variables_necessaires+" \input{modele-quittance-"+lot['type_lot']+".tex}\" ")
       
 
+# Appelle le générateur de quittances et crée les quittances
 gen = GenerateurQuittances("bdd.yml")
 gen.creerQuittances()
