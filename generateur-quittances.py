@@ -22,41 +22,37 @@ class GenerateurQuittances:
     self.bddVersQuittances()
   def rapporterVariablesProprioPourLatex(self, bdd):
     variables = ""
-    variables += " \\def\\nomproprio{"+bdd['proprietaire']['nom']+"} "
-    variables += " \\def\\adresseproprio{"+bdd['proprietaire']['adresse']+"} "
-    variables += " \\def\\villeproprio{"+bdd['proprietaire']['code_postal'] +" "+ bdd['proprietaire']['ville']+"} "
-    variables += " \\def\\lieudocument{"+bdd['proprietaire']['ville']+"} "
+    variables += " \\def\\nomproprio{"+str(bdd['proprietaire']['nom'])+"} "
+    variables += " \\def\\adresseproprio{"+str(bdd['proprietaire']['adresse'])+"} "
+    variables += " \\def\\villeproprio{"+str(bdd['proprietaire']['code_postal']) +" "+ str(bdd['proprietaire']['ville'])+"} "
+    variables += " \\def\\lieudocument{"+str(bdd['proprietaire']['ville'])+"} "
     return variables
   def rapporterVariablesInfoLocatairePourLatex(self, lot):
     variables = ""
-    variables += " \\def\\loyerchiffres{"+lot['montant_loyer']+"} "
-    variables += " \\def\\charges{"+lot['montant_charges']+"} "
-    if "montant_economies_energie" in lot:
-      variables += " \\def\\economisenergies{"+lot['montant_economies_energie']+"} "
-    else:
-      variables += " \\def\\economisenergies{0} "
-    variables += " \\def\\nomlocataire{"+lot['nom_locataire']+"} "
-    variables += " \\def\\adresselocataire{"+lot['adresse_locataire']+"} "
-    variables += " \\def\\villelocataire{"+lot['ville_locataire']+"} "
-    variables += " \\def\\lotlocation{"+lot['numero']+"} "
-    variables += " \\def\\totalpaiementchiffres{"+lot['montant_total_chiffres']+"} "
-    variables += " \\def\\totalpaiementlettres{"+lot['montant_total_lettres']+"} "
-    variables += " \\def\\datepaiement{"+lot['jour_paiement_mois']+"/"+self.mois+"/"+self.annee+"} "
+    variables += " \\def\\loyerchiffres{"+str(lot['montant_loyer'])+"} "
+    variables += " \\def\\charges{"+str(lot['montant_charges'])+"} "
+    variables += " \\def\\nomlocataire{"+str(lot['nom_locataire'])+"} "
+    variables += " \\def\\adresselocataire{"+str(lot['adresse_locataire'])+"} "
+    variables += " \\def\\villelocataire{"+str(lot['ville_locataire'])+"} "
+    variables += " \\def\\lotlocation{"+str(lot['numero'])+"} "
+    variables += " \\def\\totalpaiementchiffres{"+str(lot['montant_total_chiffres'])+"} "
+    variables += " \\def\\totalpaiementlettres{"+str(lot['montant_total_lettres'])+"} "
+    variables += " \\def\\datepaiement{"+str(lot['jour_paiement_mois']).zfill(2)+"/"+self.mois+"/"+self.annee+"} "
     return variables
   def rapporterVariablesAdresseLocationPourLatex(self, adresse):
     variables = ""
-    variables += " \\def\\adresselocation{"+adresse.split(',')[0]+"} "
-    variables += " \\def\\villelocation{"+adresse.split(',')[1]+"} "
+    variables += " \\def\\adresselocation{"+str(adresse.split(',')[0])+"} "
+    variables += " \\def\\villelocation{"+str(adresse.split(',')[1])+"} "
     return variables
   def creerVariablesDatePourLatex(self):
     variables = ""
     date = datetime.datetime.strptime(self.annee+"-"+self.mois+"-01", "%Y-%m-%d")
     jour_fin_mois = str(calendar.monthrange(int(self.annee), int(self.mois))[1])
-    variables += " \\def\\nommois{"+mois_francais[date.strftime("%m")]+"} "
-    variables += " \\def\\numeromois{"+date.strftime("%m")+"} "
-    variables += " \\def\\annee{"+datetime.datetime.now().strftime("%Y")+"} "
-    variables += " \\def\\debutmois{"+date.strftime("%d/%m/%Y")+"} "
-    variables += " \\def\\finmois{"+date.strftime(jour_fin_mois+"/%m/%Y")+"} "
+    variables += " \\def\\nommois{"+str(mois_francais[date.strftime("%m")])+"} "
+    variables += " \\def\\numeromois{"+str(date.strftime("%m"))+"} "
+    variables += " \\def\\annee{"+str(datetime.datetime.now().strftime("%Y"))+"} "
+    variables += " \\def\\debutmois{"+str(date.strftime("%d/%m/%Y"))+"} "
+    variables += " \\def\\finmois{"+str(date.strftime(jour_fin_mois+"/%m/%Y"))+"} "
     return variables
   def rapporterNomLocataire(self, lot):
     return lot['nom_locataire'].split(" ")[-1]
