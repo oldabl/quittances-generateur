@@ -132,11 +132,5 @@ dmypy.json
 *.aux
 *.pdf
 
-# Personal signature formats
-*.png
-*.PNG
-*.jpg
-*.JPG
-
 # Temporary
 .DS_Store
