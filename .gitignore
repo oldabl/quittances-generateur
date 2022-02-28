@@ -137,3 +137,6 @@ dmypy.json
 *.PNG
 *.jpg
 *.JPG
+
+# Temporary
+.DS_Store
