@@ -1,9 +1,10 @@
 # Generateur de quittances de loyer
 Requis :
-- installer pdflatex sur son environnement
+- installer pdflatex et python sur son environnement
 - installer PyYAML avec pip
 
-python generateur-quittances.py``
+Sur un terminal :
+python generateur-quittances.py
 
 Dans le fichier generateur-quittances.py, en bas, se trouvent les lignes suivantes :
 gen = GenerateurQuittances("bdd.yml")
