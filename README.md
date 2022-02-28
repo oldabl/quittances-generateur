@@ -1,4 +1,4 @@
-# quittances-generateur
+# Generateur de quittances de loyer
 Requis :
 - installer pdflatex sur son environnement
 - installer PyYAML avec pip
