@@ -1,16 +1,16 @@
 ---
-
 proprietaire:
   nom: M. Tintin Milou
   adresse: 26 rue du Labrador
   ville: Bruxelles
   code_postal: 1000
 
-  
+
 adresses:
 
 - adresse: Château de Moulinsart, 1000 Bruxelles
   lots:
+
   - numero: Résidence du château
     nom_locataire: Cpt Archibald Haddock
     adresse_locataire: Château de Moulinsart
@@ -21,6 +21,7 @@ adresses:
     montant_total_chiffres: 1150.00
     montant_total_lettres: mille cent cinquante
     jour_paiement_mois: 10
+
   - numero: Garage du parc
     nom_locataire: Pr. Tryphon Tournesol
     adresse_locataire: 1 rue des Sciences
@@ -32,8 +33,10 @@ adresses:
     montant_total_lettres: quatre vingt dix
     jour_paiement_mois: 5
 
+
 - adresse: 1 rue des Divas, 75000 Paris
   lots:
+
   - numero: Appartement 75
     nom_locataire: Mme Bianca Castafiore
     adresse_locataire: 1 rue des Divas
