@@ -17,7 +17,7 @@ Un exemple à suivre se trouve dans le fichier *bdd.yml*.
 ## 2. Créez vos quittances
 Pour generer les quittances du mois en cours, sur un terminal, tapez :
 ```python
-python generateur-quittances.py
+./generer.sh
 ```
 
 ## 3. Changez le mois
