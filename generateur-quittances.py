@@ -85,8 +85,17 @@ class GenerateurQuittances:
           toutes_variables_necessaires = " ".join(toutes_variables_necessaires.split())
           nom_famille_locataire = self.rapporterNomLocataire(lot)
           nom_fichier = "Quittance loyer "+nom_famille_locataire+" "+self.annee+"."+self.mois
-          os.system(" pdflatex -jobname '"+nom_fichier+"' -output-format pdf \""+toutes_variables_necessaires+" \input{modele-quittance-"+lot['type_lot']+".tex}\" ")
-      
+          os.system(" pdflatex -jobname '"+nom_fichier+"' -output-format pdf \""+toutes_variables_necessaires+" \input{modele-quittance-"+lot['type_lot']+".tex}\" > "+nom_fichier+".log")
+          print("Quittance pour "+lot['nom_locataire']+" générée dans '"+nom_fichier+".pdf'")
+          if 'dossier_disque' in bdd['proprietaire']:
+            destination = bdd['proprietaire']['dossier_disque']+"/Bien - Immeuble "+adresse_info['adresse_courte']+"/Location/"+lot['numero']+"/Locataire courant - "+lot['nom_locataire']
+            text = input("Copier dans '"+destination+"' ? (Y/n)'")
+            if text in ('N', 'n', 'No', 'NO', 'nO', 'no'):
+              pass
+            else:
+              os.system("cp '"+nom_fichier+".pdf' '"+destination+"'")
+              print("-> copiée dans : "+destination)
+
 
 # Appelle le générateur de quittances et crée les quittances
 gen = GenerateurQuittances("bdd.yml")
