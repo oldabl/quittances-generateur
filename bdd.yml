@@ -4,11 +4,12 @@ proprietaire:
   adresse: 26 rue du Labrador
   ville: Bruxelles
   code_postal: 1000
-
+  dossier_disque: "/Dossier/Pour/Copier/Automatiquement/Quittances/"
 
 adresses:
 
 - adresse: Château de Moulinsart, 1000 Bruxelles
+  adresse_courte: Château Moulinsart Bruxelles
   lots:
 
   - numero: Résidence du château
@@ -35,6 +36,7 @@ adresses:
 
 
 - adresse: 1 rue des Divas, 75000 Paris
+  adresse_courte: 1 rue des Divas Paris
   lots:
 
   - numero: Appartement 75
