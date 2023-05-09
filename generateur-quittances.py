@@ -89,10 +89,8 @@ class GenerateurQuittances:
           print("Quittance pour "+lot['nom_locataire']+" générée dans '"+nom_fichier+".pdf'")
           if 'dossier_disque' in bdd['proprietaire']:
             destination = bdd['proprietaire']['dossier_disque']+"/Bien - Immeuble "+adresse_info['adresse_courte']+"/Location/"+lot['numero']+"/Locataire courant - "+lot['nom_locataire']
-            text = input("Copier dans '"+destination+"' ? (Y/n)'")
-            if text in ('N', 'n', 'No', 'NO', 'nO', 'no'):
-              pass
-            else:
+            text = input("Copier dans '"+destination+"' ? (y/N)'")
+            if text in ('Y', 'y', 'yes', 'yeS', 'yEs', 'yES', 'Yes', 'YeS', 'YEs', 'YES'):
               os.system("cp '"+nom_fichier+".pdf' '"+destination+"'")
               print("-> copiée dans : "+destination)
 
