@@ -131,6 +131,7 @@ dmypy.json
 # LaTeX artefacts
 *.aux
 *.pdf
+Quittance
 
 # Temporary
 .DS_Store
