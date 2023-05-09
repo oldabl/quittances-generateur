@@ -1,1 +1,1 @@
-rm -rf *.aux *.log
+rm -rf *.aux *.log *.pdf Quittance
