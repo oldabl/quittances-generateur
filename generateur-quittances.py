@@ -1,4 +1,4 @@
-import yaml, os, datetime, calendar
+import yaml, os, datetime, calendar, sys, select
 
 # Tableau qui fait la correspondance entre les numéro de mois et leur nom en français
 mois_francais = { "01": "janvier",
@@ -99,10 +99,13 @@ class GenerateurQuittances:
           print(recuouquittancetexte+" de loyer pour "+lot['nom_locataire']+" générée dans '"+nom_fichier+".pdf'")
           if 'dossier_disque' in bdd['proprietaire']:
             destination = bdd['proprietaire']['dossier_disque']+"/Bien - Immeuble "+adresse_info['adresse_courte']+"/Location/"+lot['numero']+"/Locataire courant - "+lot['nom_locataire']
-            text = input("Copier dans '"+destination+"' ? (y/N)'")
-            if text in ('Y', 'y', 'yes', 'yeS', 'yEs', 'yES', 'Yes', 'YeS', 'YEs', 'YES'):
-              os.system("cp '"+nom_fichier+".pdf' '"+destination+"'")
-              print("-> copiée dans : "+destination)
+            print("Copier dans '"+destination+"' ? (y/N)'")
+            text, b, c = select.select([sys.stdin], [], [], 10)
+            if (text):
+              text = sys.stdin.readline().strip()
+              if text in ('Y', 'y', 'yes', 'yeS', 'yEs', 'yES', 'Yes', 'YeS', 'YEs', 'YES'):
+                os.system("cp '"+nom_fichier+".pdf' '"+destination+"'")
+                print("-> copiée dans : "+destination)
 
 
 # Appelle le générateur de quittances et crée les quittances

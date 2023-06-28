@@ -2,7 +2,7 @@
 Le générateur marche sur un terminal Bash.
 Prérequis :
 - installer les packets suivants : python3 python-is-python3 python3-pip texlive-latex-base texlive-fonts-recommended texlive-lang-french
-- avec pip, installer PyYAML et inputimeout
+- avec pip, installer PyYAML
 
 ## 1. Configurez vos bien
 La configuration de vos différents bien en location se fait dans le fichier *bdd.yml*.
