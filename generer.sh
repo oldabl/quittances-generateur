@@ -1,2 +1,2 @@
 python generateur-quittances.py
-rm -rf *.aux *.log Quittance
+rm -rf *.aux *.log Quittance Recu
