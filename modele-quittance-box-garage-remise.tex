@@ -1,7 +1,7 @@
 % Modèle LaTeX de quittance de location de box, remise ou garage
 
 \documentclass[12pt,a4paper]{article}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{graphicx}
@@ -55,10 +55,7 @@ Adresse de la location :\\
 
 % Quittance de loyer
 \begin{flushleft}
-\-\hspace{0.5cm}Je, soussigné \nomproprio, propriétaire du box/garage/remise désigné ci-dessus, déclare avoir reçu
-de \nomlocataire, la somme de \totalpaiementchiffres\space euros (\totalpaiementlettres\space euros), au titre
-du paiement du loyer et des charges pour la période de location du \debutmois\space au
-\finmois\space et lui en donne quittance, sous réserve de tous mes droits.
+\-\hspace{0.5cm}Je, soussigné \nomproprio, propriétaire du box/garage/remise désigné ci-dessus, déclare avoir reçu de \nomlocataire, la somme de \montantrecuchiffres\space euros (\montantreculettres\space euros), au titre du paiement du loyer et des charges pour la période de location du \debutmois\space au \finmois\space et lui en donne quittance, sous réserve de tous mes droits.
 \end{flushleft}
 
 \medskip
@@ -67,10 +64,10 @@ du paiement du loyer et des charges pour la période de location du \debutmois\s
 \begin{flushleft}
 Détail du règlement :\\
 \begin{itemize}
-\item loyer : \loyerchiffres\space euros\\
+\item loyer hors charges : \loyerchiffres\space euros\\
 \item provision pour charges : \charges\space euros\\
 \end{itemize}
-Total : \totalpaiementchiffres\space euros\\
+Total : \loyerccchiffres\space euros\\
 Date du paiement : le \datepaiement
 \end{flushleft}
 

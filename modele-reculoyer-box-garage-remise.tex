@@ -1,4 +1,4 @@
-% Modèle LaTeX de quittance de location vide ou meublée
+% Modèle LaTeX de quittance de location de box, remise ou garage
 
 \documentclass[12pt,a4paper]{article}
 \usepackage[french]{babel}
@@ -11,9 +11,9 @@
 
 % Titre du document
 \begin{center}
-Location vide ou meublée à titre de résidence principale\\
+Location de box, garage ou remise\\
 \begin{LARGE}
-Quittance de loyer du mois de \nommois\space\annee
+Reçu - paiement partiel de loyer du mois de \nommois\space\annee
 \end{LARGE}
 \end{center}
 \bigskip
@@ -53,22 +53,25 @@ Adresse de la location :\\
 
 \medskip
 
-% Quittance de loyer
+% Reçu de loyer
 \begin{flushleft}
-\-\hspace{0.5cm}Je, soussigné \nomproprio, propriétaire du logement désigné ci-dessus, déclare avoir reçu de \nomlocataire, la somme de \montantrecuchiffres\space euros (\montantreculettres\space euros), au titre du paiement du loyer et des charges pour la période de location du \debutmois\space au \finmois\space et lui en donne quittance, sous réserve de tous mes droits.
+\-\hspace{0.5cm}Je, soussigné \nomproprio, propriétaire du box/garage/remise désigné ci-dessus, déclare avoir reçu de \nomlocataire, la somme de \montantrecuchiffres\space euros (\montantreculettres\space euros), au titre du paiement du loyer et des charges pour la période de location du \debutmois\space au \finmois\space.
 \end{flushleft}
 
 \medskip
 
 % Détail du règlement
 \begin{flushleft}
-Détail du règlement :\\
+Détail de la somme totale due :\\
 \begin{itemize}
 \item loyer hors charges : \loyerchiffres\space euros\\
 \item provision pour charges : \charges\space euros\\
+\item loyer charges comprises : \loyerccchiffres\space euros (\loyercclettres\space euros)\\
 \end{itemize}
-Total : \loyerccchiffres\space euros\\
-Date du paiement : le \datepaiement
+
+\medskip
+
+Somme restant due pour cette période : \montantimpayechiffres\space euros\\
 \end{flushleft}
 
 \medskip
