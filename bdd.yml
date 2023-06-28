@@ -21,6 +21,8 @@ adresses:
     montant_charges: 100.00
     montant_total_chiffres: 1150.00
     montant_total_lettres: mille cent cinquante
+    montant_recu_chiffres: 1150.00
+    montant_recu_lettres: mille cent cinquante
     jour_paiement_mois: 10
 
   - numero: Garage du parc
@@ -32,6 +34,8 @@ adresses:
     montant_charges: 10.00
     montant_total_chiffres: 90.00
     montant_total_lettres: quatre vingt dix
+    montant_total_chiffres: 50.00
+    montant_total_lettres: cinquante
     jour_paiement_mois: 5
 
 
@@ -46,6 +50,8 @@ adresses:
     type_lot: appt-meuble-vide
     montant_loyer: 650.00
     montant_charges: 50.00
+    montant_total_chiffres: 700.00
+    montant_total_lettres: sept cent
     montant_total_chiffres: 700.00
     montant_total_lettres: sept cent
     jour_paiement_mois: 15
