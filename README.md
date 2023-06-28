@@ -1,8 +1,8 @@
 # Générateur de quittances de loyer
-Le generateur marche sur un terminal Bash.
-Prérequis  :
-- installer les packets suivants : python3 python-is-python3 texlive-latex-base texlive-fonts-recommended texlive-lang-french
-- avec pip, installer PyYAML
+Le générateur marche sur un terminal Bash.
+Prérequis :
+- installer les packets suivants : python3 python-is-python3 python3-pip texlive-latex-base texlive-fonts-recommended texlive-lang-french
+- avec pip, installer PyYAML et inputimeout
 
 ## 1. Configurez vos bien
 La configuration de vos différents bien en location se fait dans le fichier *bdd.yml*.
